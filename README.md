@@ -7,10 +7,11 @@ Update the path with the name of your diagram]: \Project One- Networking and Con
 ![image](https://github.com/joshuayyoung/Project-One-Elk-Configuration/blob/main/diagram/Network%20Diargram%20(1).jpg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
-		---
+		
 [filebeat-playbook](ansible/filebeat.yml.txt)
-    		---
-[install-playbook](		
+    		
+[install-playbook](ansible/install-elk.yml.txt)
+
 This document contains the following details:
 - Description of the Topologu
 - Access Policies
