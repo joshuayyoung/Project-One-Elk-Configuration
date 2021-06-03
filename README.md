@@ -10,6 +10,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 -install-elk.yml start from here down:
 		---
+[text](ansible/filebeat.yml.txt)
 
 -TODO: filebeat.yml
      starts from here down
