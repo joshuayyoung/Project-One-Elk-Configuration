@@ -40,15 +40,15 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Name     | Fucntion | IP Address              | Operating System |
 
-| Jump-Box | Gateway  | 10.0.0.4                | Windows          |
+| Jump-Box | Gateway  | 10.0.0.4                | Linux         |
 
-| Web-1    | server   | 10.0.0.5                | Windows          |
+| Web-1    | server   | 10.0.0.5                | Linux          |
 
-| Web-2    | server   | 10.0.0.6                | Windows          |
+| Web-2    | server   | 10.0.0.6                | Linux          |
 
-| Web-3    | server   | 10.0.0.7                | Windows          |
+| Web-3    | server   | 10.0.0.7                | Linux         |
 
-| Elk      | Monitor  | private ip: 10.1.0.4/  public ip: 20.98.105.52    | Windows           |
+| Elk      | Monitor  | private ip: 10.1.0.4/  public ip: 20.98.105.52    | Linux          |
 
 ### Access Policies
 
@@ -96,13 +96,18 @@ n 3-5 bullets, explain the steps of the ELK installation play. E.g., install Doc
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- List the IP addresses of the machines you are monitoring:
+- 10.0.0.5 (Web-1)             
+- 10.0.0.6 (Web-2)              
+- 10.0.0.7 (Web-3)
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- Specify which Beats you successfully installed:
+- I was able to successfully install Filebeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
+- Filebeat collects the changes done to our system logs and traffic; Metricbeat collects stats and metrics, such as ping CPU usage, In/OutBound Traffic, Disk space used, and Memory Usage of the web servers.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -112,8 +117,9 @@ SSH into the control node and follow the steps below:
 - Update the _____ file to include...
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
+Answer the following questions to fill in the blanks:_
+- Which file is the playbook? Where do you copy it?
+- 
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 - _Which URL do you navigate to in order to check that the ELK server is running?
  
