@@ -38,30 +38,33 @@ What does Metricbeat record?
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-+----------+----------+-------------------------+------------------+
 | Name     | Fucntion | IP Address              | Operating System |
-+----------+----------+-------------------------+------------------+
+
 | Jump-Box | Gateway  | 10.0.0.4                | Windows          |
-+----------+----------+-------------------------+------------------+
+
 | Web-1    | server   | 10.0.0.5                | Windows          |
-+----------+----------+-------------------------+------------------+
+
 | Web-2    | server   | 10.0.0.6                | Windows          |
-+----------+----------+-------------------------+------------------+
+
 | Web-3    | server   | 10.0.0.7                | Windows          |
-+----------+----------+-------------------------+------------------+
-| Elk      | Monitor  | private ip: 10.1.0.4    | Windows          |
-|          |          | public ip: 20.98.105.52 |                  |
-+----------+----------+-------------------------+------------------+
+
+| Elk      | Monitor  | private ip: 10.1.0.4/  public ip: 20.98.105.52    | Windows           |
+
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump-Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 Add whitelisted IP addresses:
--72.82.55.236
+- 72.82.55.236 (local computer)
+- 10.0.0.5 (Web-1)             
+- 10.0.0.6 (Web-2)              
+- 10.0.0.7 (Web-3)
+- private: 10.1.0.4 | public: 20.98.105.52 (Elk)
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by ssh.
+ Which machine did you allow to access your ELK VM? What was its IP address?
+ -The machine that has access to the ELK vm is the Jump-Box; its Public IP Address is 40.88.14.28 and it's Private IP Address is 10.0.0.4 .
 
 A summary of the access policies in place can be found in the table below.
 
@@ -70,18 +73,24 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
 |          |                     |                      |
 |          |                     |                      |
+|          |                     |                      |
+|          |                     |                      | 
+|          |                     |                      |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- What is the main advantage of automating configuration with Ansible?
+- When you automate a task in ansible, you are able to put that task into multiple servers across your from one playbook instead of having to edit/add tasks to those severs manually.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+n 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+- install.docker.io
+- install: python3-pip
+- install: docker
+- command: sysctl -w vm.max_map_count=262144
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
@@ -107,5 +116,4 @@ _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 - _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+ 
