@@ -2,66 +2,14 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram]: \Project One- Networking and Confiuration\Project Details\Images\Network Diagram(1)
+Update the path with the name of your diagram]: \Project One- Networking and Confiuration\Project Details\Images\Network Diagram(1)
+
+![image](https://github.com/joshuayyoung/Project-One-Elk-Configuration/blob/main/diagram/Network%20Diargram%20(1).jpg)
+
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: install-elk.yml
-	start from here down:
+-install-elk.yml start from here down:
 		---
-- name: Configure Elk VM with Docker
-  hosts: elk
-  remote_user: RedAdmin
-  become: true
-  tasks:
-    - name: install docker.io
-      apt:
-        force_apt_get: yes
-        update_cache: yes
-        name: docker.io
-        state: present
-
-    - name: Install pip3
-      apt:
-       force_apt_get: yes
-       name: python3-pip
-       state: present
-      
-      # Use pip module (It will default to pip3)
-    - name: Install Docker module
-      pip:
-        name: docker
-        state: present
-
-      # Use command module
-    - name: Increase virtual memory
-      command: sysctl -w vm.max_map_count=262144
-
-      # Use sysctl module
-    - name: Use more memory
-      sysctl:
-        name: vm.max_map_count
-        value: 262144
- 	state: present
-        reload: yes
-
-      # Use docker_container module
-    - name: download and launch a docker elk container
-      docker_container:
-        name: elk
-        image: sebp/elk:761
-        state: started
-        restart_policy: always
-        # Please list the ports that ELK runs on
-        published_ports:
-          -  5601:5601
-          -  9200:9200
-          -  5044:5044
-     
-      # Use systemd module
-    - name: Enable service docker on boot
-      systemd:
-        name: docker
-        enabled: yes
 
 -TODO: filebeat.yml
      starts from here down
