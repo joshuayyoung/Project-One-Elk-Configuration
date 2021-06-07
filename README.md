@@ -4,7 +4,7 @@ The files in this repository were used to configure the network depicted below.
 
 Update the path with the name of your diagram]: \Project One- Networking and Confiuration\Project Details\Images\Network Diagram(1)
 
-![image](https://github.com/joshuayyoung/Project-One-Elk-Configuration/blob/main/diagram/Network%20Diargram%20(1).jpg)
+![image](https://github.com/joshuayyoung/Project-One-Elk-Configuration/blob/28c371038e484a12df4cf5afd6eb5cecbe8689d6/diagram/networkdiagram.jpg.jpg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 		
