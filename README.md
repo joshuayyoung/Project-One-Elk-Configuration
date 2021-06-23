@@ -48,7 +48,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Web-3    | server   | 10.0.0.7                | Linux         |
 
-| Elk      | Monitor  | private ip: 10.1.0.4/  public ip: 20.98.105.52    | Linux          |
+| Elk      | Elk Stack  | private ip: 10.1.0.4/  public ip: 20.98.105.52    | Linux          |
 
 ### Access Policies
 
