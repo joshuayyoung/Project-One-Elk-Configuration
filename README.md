@@ -16,8 +16,8 @@ This document contains the following details:
 - Description of the Topologu
 - Access Policies
 - ELK Configuration
-  - Beats in Use
-  - Machines Being Monitored
+- Beats in Use
+- Machines Being Monitored
 - How to Use the Ansible Build
 
 
@@ -70,12 +70,12 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
-|          |                     |                      |
-|          |                     |                      | 
-|          |                     |                      |
+| Jump Box | No              | 10.0.0.1 10.0.0.2    |
+| Web-One        | No                    |   10.0.0.5                   |
+| Web-Two         |  No                   |    10.0.0.6                 |
+| Web-Three        |  No                   |   10.0.0.7                   |
+| Load Balancer      |  No                   |  137.117.64.180                    | 
+|  Elk-server        |  No                   |   20.98.105.52                   |
 
 ### Elk Configuration
 
@@ -103,7 +103,7 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 - Specify which Beats you successfully installed:
-- I was able to successfully install Filebeat
+- Filebeat
 
 These Beats allow us to collect the following information from each machine:
 - In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
@@ -113,13 +113,6 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
-
-Answer the following questions to fill in the blanks:_
-- Which file is the playbook? Where do you copy it?
-- 
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
- 
+- Copy the YAML file to etc/anisble.
+- Update the etc/anisble/hosts file to include host gorup, private ip, and ansible_python_interpreter=/usr/bin/python3
+- Run the playbook, and navigate to curl localhost/setup.php to check that the installation worked as expected. 
